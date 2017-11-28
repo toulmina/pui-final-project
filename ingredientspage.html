@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Select Your Ingredients!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--importing jQuery script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- This website uses Bootstrap JS and CSS through links to MaxCDN's CDN supported version-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- importing custom stylesheet-->
+    <link rel="stylesheet" type="text/css" href="uxkitchen.css">
+    
+    <!-- importing stylesheet for Animate-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!-- importing custom javascript file-->
+    <script src="finalproj.js" type="text/javascript"></script>
+  </head>
+
+<body>
+
+  <!--This is the jumbotron container for the grid in Bootstrap-->
+  <div class="jumbotron jumbotron-ingredients">
+    <!--This is the container for the grid in Bootstrap-->
+    <div class="container-fluid container-fluid-ingredients">
+
+      <!--This is the div for the right hand home box, leading back to the home page-->
+      <div class="row">
+          <div class="col-sm-4" id="home-box">
+              <img id="spatula-icon" src="images/spatula.png"> 
+               <h5 id="home-text">Home</h5>
+          </div>
+      </div>
+
+    <!--This is the div for the right hand favorites box, leading to wishlist-->
+    <div class="row">
+      <div class="col-sm-4" id="wishlist-box">
+        <h5 id="saved-text">Saved</h5> 
+        <img id="heart-icon" src="images/hearticon.png">
+      </div>
+    </div>
+  
+    <!--This is the div for the left hand welcome message and subheading-->
+    <div class="row">
+      <div class="col-sm-5" id="welcome-box-2">
+		 		<h2 id="header-text">Select your Ingredients!</h2>
+		 		<h5 id="info-text">Choose the following options to define your current research related needs. We'll then show you different research methods that meet your requirements.</h5>
+      </div>	
+	  </div>
+
+
+    <!--The first two selection menus (left hand side)-->
+    <div class="row" id="first-column">
+      <div class="col-sm-5">
+
+        <!--Selection menu for design stage-->
+      	<h3> Design Stage </h3>
+        <form action="">
+        <input type="radio" name="stages" id = "early-stage" value='Early Stage'><label>Early (Strategy Phase)</label><br>
+        <input type="radio" name="stages" id = "mid-stage" value='Mid Stage'> <label>Mid (Identification Phase)</label><br>
+        <input type="radio" name="stages" id = "late-stage" value='Late Stage'> <label>Late (Evaluation Phase)</label><br>
+        <input type="radio" name="stages" id = "all-stage" value='All Stages' checked> <label>All</label>
+        </form>
+
+      <!--Selection menu for time investment-->
+       <h3>Time Investment </h3>
+        <form action="">
+        <input type="radio" name="times" id = "high-time" value='High Time Investment'><label>High (More than one week)</label><br>
+        <input type="radio" name="times" id = "medium-time" value='Medium Time Investment'> <label>Medium (Between one day and one week)</label><br>
+        <input type="radio" name="times" id = "low-time" value='Low Time Investment'> <label>Low (One day or less)</label><br>
+        <input type="radio" name="times" id = "all-time" value='All Time Investments' checked> <label>All</label>
+      </form>
+    </div>
+
+    <!--The first two selection menus (right hand side)-->
+	  <div class="col-sm-5">
+
+        <!--Selection menu for user involvement-->
+      	<h3>User Involvement </h3>
+      	  <form action="">
+      	  <input type="radio" name="involvements" id = "active-involvement" value='Active Involvement'><label>Active (Participants given task-based goals)</label><br>
+      	  <input type="radio" name="involvements" id = "passive-involvement" value='Passive Involvement'> <label>Passive (Participant info is collected)</label><br>
+      	  <input type="radio" name="involvements" id = "no-involvement" value='No Involvement'> <label>None (No Participants involved)</label><br>
+      	  <input type="radio" name="involvements" id = "all-involvement" value='All Involvement Types' checked> <label>All</label>
+      	</form>
+
+      <!--Selection menu for data type-->  
+      <h3>Data Type</h3>
+        <form action="">
+        <input type="radio" name="datum" id = "quantitative-data" value='Quantitative Data'><label>Quantitative Data</label><br>
+        <input type ="radio" name="datum" id = "qualitative-data" value='Qualitative Data'> <label>Qualitative Data</label><br>
+        <input type="radio" name="datum" id = "all-data" value='All Data Types' checked> <label>All</label>
+      </form>
+    </div>
+  </div>
+
+      <!--Button to continue to next page-->  
+      <div class="row">
+      	<div class="col=sm-4" id="submit-criteria">
+      		<type="button" class="btn btn-default" id="recipe-text"><h3> Let's Cook!</h3></button>
+      	</div>
+      </div>
+    </div>	
+  </div>
+
+  <!--Credits box for use of images-->
+  <div class="col-sm-3 credits-box-2">
+      <a href="https://www.vecteezy.com">Free Vectors via Vecteezy!</a>
+  </div>
+
+</div>
+</body>
+</html>

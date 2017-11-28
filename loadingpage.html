@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Loading Your Recipes...</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--importing jQuery script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- This website uses Bootstrap JS and CSS through links to MaxCDN's CDN supported version-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- importing custom stylesheet-->
+    <link rel="stylesheet" type="text/css" href="uxkitchen.css">
+    
+    <!-- importing stylesheet for Animate-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!-- importing custom javascript file-->
+    <script src="finalproj.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+    <!--This is the jumbotron container for the grid in Bootstrap-->
+    <div class="jumbotron jumbotron-loading">
+      <!--This is the container for the grid in Bootstrap-->
+      <div class="container-fluid">
+
+      <!--This is the div for the right hand home box, leading back to the home page-->  
+     	<div class="row">
+          <div class="col-sm-4" id="home-box">
+             <img id="spatula-icon" src="images/spatula.png"> 
+             <h5 id="home-text">Home</h5>
+          </div>
+      </div>
+
+      <!--This is the div for the right hand favorites box, leading to wishlist-->
+      <div class="row">
+        <div class="col-sm-4" id="wishlist-box">
+          <h5 id="saved-text">Saved</h5> 
+          <img id="heart-icon" src="images/hearticon.png">
+        </div>
+      </div>
+
+      <!-- knife animation -->
+      <div class="col-sm-12 text-center">
+        <img class="animated" id="knife-image" src="images/knife.png">
+      </div>
+
+      <!-- center text box and subheading -->
+ 	    <div class="row">
+        <div class="col-sm-12" id="loading-box">
+		 		 <h2 class="animated fadeInLeftBig" id="header-text">Hold Tight!</h2>
+		 		 <h5 class="animated fadeInRightBig" id="info-text">We're cooking up some delicious methods</h5>
+        </div>	
+      </div>
+
+    <!--Credits box for use of images-->
+    <div class="col-sm-3 credits-box">
+      <a href="https://www.vecteezy.com">Free Vectors via Vecteezy!</a> </br>
+      <a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by Freepik</a>
+    </div>
+
+	 </div>
+  </div>
+</body>
+</html>

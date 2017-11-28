@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Your Recipe Results</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--importing jQuery script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- This website uses Bootstrap JS and CSS through links to MaxCDN's CDN supported version-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- importing custom stylesheet-->
+    <link rel="stylesheet" type="text/css" href="uxkitchen.css">
+    
+    <!-- importing stylesheet for Animate-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!--importing Handlebars library-->
+    <script src="lib/handlebars-v4.0.11.js"></script>
+
+    <!-- importing custom javascript file-->
+    <script src="finalproj.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+    <!--This is the jumbotron container for the grid in Bootstrap-->
+    <div class="jumbotron jumbotron-results">
+   
+      <!--This is the container for the grid in Bootstrap-->
+      <div class="container-fluid">
+
+        <!--This is the div for the right hand home box, leading back to the home page-->  
+        <div class="row">
+          <div class="col-sm-4" id="home-box">
+           <img id="spatula-icon" src="images/spatula.png"> 
+           <h5 id="home-text">Home</h5>
+         </div>
+        </div>
+
+        <!--This is the div for the right hand favorites box, leading to wishlist-->
+        <div class="row">
+          <div class="col-sm-4" id="wishlist-box">
+            <h5 id="saved-text">Saved</h5> 
+            <img id="heart-icon" src="images/hearticon.png">
+          </div>
+        </div>
+
+        
+        <div class="row">
+        
+          <!--This is the div for the left hand welcome message and subheading-->
+          <div class="col-sm-6" id="results-box">
+             <h2 id="header-text">Your Recipe Results</h2>
+             <h5 id="info-text">Click on each of the cards below to learn more about specific research methods. These methods are adapted from Hanington and Martin's <u>Universal Methods of Design: 100 Ways to Research Complex Problems, Develop Innovative Ideas, and Design Effective Solutions.</u> Click on the heart icon to save specific methods to your wishlist.</h5>
+         </div>
+
+          <!--Drop down menus area-->
+          <div class="col-sm-6" id="dropdown-menus">
+
+            <!--Drop down menu for design stage-->
+            <select id="dropdown-one">
+              <option value="" disabled="disabled" selected="selected" id="selected-one">Please select a name</option>
+              <option value="Early Stage">Early Stage</option>
+              <option value="Mid Stage">Mid Stage</option>
+              <option value="Late Stage">Late Stage</option>
+              <option value="All Stages">All Stages</option>
+            </select>
+
+            <!--Drop down menu for time investment-->
+            <select id="dropdown-two">
+              <option value="" disabled="disabled" selected="selected" id="selected-two">Please select a name</option>
+              <option value="High Time Investment">High Time Investment</option>
+              <option value="Medium Time Investment">Medium Time Investment</option>
+              <option value="Low Time Investment">Low Time Investment</option>
+              <option value="All Time Investments">All Time Investments</option>
+            </select>
+
+            <!--Drop down menu for user involvement-->
+            <select id="dropdown-three">
+              <option value="" disabled="disabled" selected="selected" id="selected-three">Please select a name</option>
+              <option value="Active Involvement">Active Involvement</option>
+              <option value="Passive Involvement">Passive Involvement</option>
+              <option value="No Involvement">No Involvement</option>
+              <option value="All Involvement Types">All Involvement Types</option>
+            </select>
+
+            <!--Drop down menu for type of data-->
+            <select id="dropdown-four">
+              <option value="" disabled="disabled" selected="selected" id="selected-four">Please select a name</option>
+              <option value="Quantitative Data">Quantitative Data</option>
+              <option value="Qualitative Data">Qualitative Data</option>
+              <option value="All Data Types">All Data Types</option>
+            </select>
+        </div>
+     </div>
+
+      <!--Product Selection Container to append dynamic data-->
+      <div id="product-selection-container" class="row">
+      </div>
+        
+      <!--Script for dynamically inputting Bootstrap cards using Handlebars-->  
+      <script id="selection-template" type="text/x-handlebars-template">
+        <!--Run the script for each item-->  
+        {{#each this}}
+        <div class="col-sm-4 whole-div rounded" id={{ id }}>
+          <div class=container-interior>
+            <div class = "product-selection">
+              <div class="card rounded">
+                <h3 class="card-header rounded" id=name> {{name}} </h3>            
+                <div class="card-block">
+
+                <!--Card content-->  
+                 <h3 class="card-title"><a> {{name}} </a></h3>     
+                 <div class="card-text"> 
+                   <p id="desc"> <b>Description:</b> {{desc}} </br> </br></p>
+                   <p id="pros"> <b>Pros:</b> {{pros}} </br> </p>
+                   <p id="cons"> <b>Cons:</b> {{cons}} </br> </br> </p>
+                   <p> <b>Resource:</b> <a id="resources" href={{ resource-link}} target="_blank"> {{ resource-title }}</a> </p>
+                 </div>
+                 <img class="card-image" id="image" src= {{img}}>
+               </div>
+              </div>
+            </div>
+
+          <!--Close button for closing card info-->
+          <a href="#" class="btn"><img class="fav-icon" src="images/hearticon.png">
+          <a class="close-button"> Close </a>
+        </div>
+      </div>
+      {{/each}}
+    </script>
+
+    <!--Credits box for use of images-->
+    <div class="col-sm-3 credits-box-2">
+      <a href="https://www.vecteezy.com">Free Vectors via Vecteezy!</a>
+    </div>
+
+   </div>
+  </div>
+</body>
+</html>
