@@ -132,6 +132,10 @@ position:relative;
 float:right;
 }
 
+.selection-menu {
+    margin-bottom: 15%;
+}
+
 /*font for radio button labels*/
 label {
 font-family:Roboto;    
@@ -147,6 +151,14 @@ padding-right:5%;
   display: table;
   margin: auto;
   text-align:center;
+}
+
+#no-results {
+  display: table;
+  margin: auto;
+  text-align:center;
+  margin:10%;
+  color:maroon;
 }
 
 /*styling for knife animation on loading page*/

@@ -450,7 +450,6 @@ var products = {
             "img": "images/breadslice-magnet.png",
             "id":27  
         },
-
                           {
             "name": "Unobtrusive Measures",
             "stage": "Early Stage",
@@ -575,17 +574,23 @@ $(document).ready(function(){
                    });
     }
 
-  /* Checks html in results page selection template*/  
-  var source = $("#selection-template").html();
-    if (source == null) {
+    /* Checks that the user will get a result*/
+    if (filtered.length == 0) {
+        /*If the user doesn't get any results, show them a message */
+        $("#product-selection-container").append('<h3 id="no-results"> No results exist for your critera - adjust the dropdowns above to see some options!</h3>');
     } else {
-    // compile the template into a function
-    var template = Handlebars.compile(source);
-    // create new HTML using our filtered recipe data
-    var newHTML = template(filtered);
-    // add the new HTML to the page
-    $("#product-selection-container").append(newHTML);
-  }
+      /* Checks html in results page selection template*/  
+      var source = $("#selection-template").html();
+        if (source == null) {
+        } else {
+        // compile the template into a function
+        var template = Handlebars.compile(source);
+        // create new HTML using our filtered recipe data
+        var newHTML = template(filtered);
+        // add the new HTML to the page
+        $("#product-selection-container").append(newHTML);
+      }
+    }
 
   /* Hides specific elements of cards by default*/  
   $(".close-button").hide(); 
@@ -746,7 +751,6 @@ $(document).ready(function(){
     chosenIngredients = new Ingredient(selectedStage, newTime, selectedInvolvement, selectedData);
     localStorage.setItem("chosenCriteria", JSON.stringify(chosenIngredients));
     location.reload();   
-    console.log(chosenIngredients);
   });
 
 
@@ -762,7 +766,6 @@ $(document).ready(function(){
     chosenIngredients = new Ingredient(selectedStage, selectedTime, newInvolvement, selectedData);
     localStorage.setItem("chosenCriteria", JSON.stringify(chosenIngredients));
     location.reload();   
-    console.log(chosenIngredients);
   });
 
 
@@ -778,7 +781,6 @@ $(document).ready(function(){
     chosenIngredients = new Ingredient(selectedStage, selectedTime, selectedInvolvement, newData);
     localStorage.setItem("chosenCriteria", JSON.stringify(chosenIngredients));
     location.reload();   
-    console.log(chosenIngredients);
   });
 
 });
